@@ -3,6 +3,7 @@ import building from "../../assets/icons/building.svg"
 import styles from "../withUs/withUs.module.scss";
 import {about_us} from "../../assets";
 import Cards from "./Cards";
+import { play } from '../../assets/icons';
 
 
 
@@ -20,7 +21,8 @@ const WithUs: FC = () => {
                 </div>
                 <div className={styles.image_block}>
                     <div className={styles.border}/>
-                    <img src={about_us} alt="about_us" />
+                    <img src={about_us} alt="about_us" className={styles.pic} />
+                    <img src={play} alt="play" className={styles.play} />
                 </div>
             </div>
             <Cards/>

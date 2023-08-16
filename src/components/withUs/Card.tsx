@@ -10,6 +10,7 @@ const Card: FC<CardType> = ({title, content, icon}) => {
                 <div className={styles.img}><img src={icon} alt="icon"/></div>
                 <h3>{title}</h3>
             </div>
+            <p>{content}</p>
         </div>
     );
 };
