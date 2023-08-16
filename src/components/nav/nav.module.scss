@@ -1,0 +1,27 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.content{
+  width: 1440px;
+  height: 72px;
+  padding: 24px 32px 16px;
+  //border: 1px solid $accent;
+  box-shadow: 0 4px 32px 0 #00000029;
+  @include display-flex(space-between);
+  background-color: $bg-neutral;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  & .text{
+    @include display-flex(space-between);
+    gap: 32px;
+
+    & span{
+      @include fonts(500, 20px, 28px, $text-dark);
+      letter-spacing: 0.25px;
+    }
+  }
+
+
+}

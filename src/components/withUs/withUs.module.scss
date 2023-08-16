@@ -1,0 +1,107 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.content{
+  height: 836px;
+  border: 1px solid red;
+  position: relative;
+  //@include display-flex;
+  //flex-direction: column;
+
+  & .building{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  & .about_us{
+    @include display-flex(space-between, flex-start);
+    padding: 80px 48px 0 32px;
+    position: relative;
+    z-index: 1;
+
+    & .text{
+      width: 657px;
+      @include display-flex;
+      flex-direction: column;
+      gap: 32px;
+
+      & h2{
+        @include fonts(700, 48px, 67px, $text-dark);
+      }
+
+      & p{
+        @include fonts(400, 16px, 22px, $text-body);
+      }
+    }
+
+    & .image_block{
+      width: 557px;
+      height: 338px;
+      flex-shrink: 0;
+      //border-radius: 16px;
+      //border: 1px solid $bg-primary;
+      position: relative;
+      z-index: 1;
+
+      & .border{
+        border: 1px solid $bg-primary;
+        border-radius: 16px;
+        height: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      & img{
+        position: absolute;
+        left: 14px;
+        bottom: -16px;
+        border-radius: 8px;
+        //background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+
+      }
+
+    }
+  }
+
+  & .cards{
+    //margin-top: 80px;
+    @include display-flex(space-between);
+    padding: 80px 31px 0;
+  }
+
+}
+
+.card{
+  width: 443px;
+  height: 242px;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid $bg-primary;
+  @include display-flex(flex-start, flex-start);
+  flex-direction: column;
+  gap: 16px;
+  background-color: $bg-neutral;
+  position: relative;
+  z-index: 1;
+
+  & .title_block{
+    @include display-flex(flex-start);
+    gap: 16px;
+
+    & .img{
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      //background-color: $bg-primary;
+      border-radius: 16px;
+      background: var(--gradient-primary, linear-gradient(135deg, #E7B000 0%, #F1C32D 100%));
+      @include display-flex
+    }
+
+    & h3{
+      @include fonts(700, 24px, 24px, text-dark);
+      letter-spacing: 0.25px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.list{
+  @include display-flex;
+  flex-direction: column;
+
+
+  & .item{
+    background: $jazzy_jade;
+    color: white;
+    width: 100%;
+    padding: 8px 16px;
+    @include display-flex(space-between)
+  }
+}

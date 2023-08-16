@@ -1,0 +1,1 @@
+export { default as about_us } from "./images/about_us.png";
