@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import {Nav, TitleScreen, WithUs} from '../components';
-import {RoutPaths} from "../helpers/constans";
+import {Nav, TitleScreen, WithUs, Eco} from '../components';
+
 
 import styles from "./main.module.scss"
+import Feedback from "../components/feedback";
 
 const Main = () => {
     return (
@@ -11,9 +11,11 @@ const Main = () => {
             <Nav/>
             <TitleScreen/>
             <WithUs/>
-            <div className={styles.nav}>
-                Temp
-            </div>
+            <Eco/>
+            <Feedback/>
+            {/*<div className={styles.nav}>*/}
+            {/*    Temp*/}
+            {/*</div>*/}
         </div>
     );
 };

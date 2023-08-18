@@ -1,0 +1,102 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.feedback{
+
+  & .experience{
+    padding: 80px 0;
+    @include display-flex;
+    flex-direction: column;
+    gap: 32px;
+    background: $bg-primary;
+
+    & h2{
+      @include fonts(700, 48px, 67px, $text-dark);
+      letter-spacing: 0.25px;
+    }
+
+    & p{
+      width: 887px;
+      text-align: center;
+      @include fonts(400, 24px, 34px, $text-body);
+      letter-spacing: 0.25px;
+    }
+
+    & button{
+      border: none;
+      @include fonts(700, 20px, 28px, $text-white);
+      letter-spacing: 0.25px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      background: var(--gradient-secondary, linear-gradient(138deg, #000 0%, #1A1A1A 100%));
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.16);
+      cursor: pointer;
+
+      &:hover{
+        background: var(--gradient-primary, linear-gradient(135deg, #E7B000 0%, #F1C32D 100%));
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.16);
+      }
+    }
+
+    & .click_button{
+      background: $text-dark!important;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32)!important;
+    }
+  }
+
+  & .feedback_title{
+    margin-top: 80px;
+    @include fonts(700, 48px, 67px, $text-dark);
+    letter-spacing: 0.25px;
+  }
+
+  & .feedback_block{
+
+    & .slider{
+      height: 215px;
+      @include display-flex;
+      gap: 24px;
+
+      & .feedbackCard{
+        margin-top: 32px;
+        height: 100%;
+        overflow-y: auto;
+        width: 50%;
+        padding: 24px;
+        @include display-flex(center, flex-start);
+        gap: 16px;
+        border-radius: 8px;
+        border: 1px solid $bg-primary;
+        background: $bg-neutral;
+
+        & .photo{
+          width: 80px;
+          height: 80px;
+        }
+
+        & .text{
+          width: calc(100% - 80px);
+
+          & h3{
+            @include fonts(700, 24px, 24px, $text-dark);
+            letter-spacing: 0.25px;
+          }
+
+          & h5{
+            @include fonts(700, 16px, 22px, $text-dark);
+            letter-spacing: 0.25px;
+          }
+
+          & p{
+            margin-top: 16px;
+            @include fonts(400, 14px, 20px, $text-body);
+            letter-spacing: 0.25px;
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
