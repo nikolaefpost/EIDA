@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 
 import styles from "./feedback.module.scss"
 import cn from "classnames";
@@ -7,9 +7,13 @@ import {FeedbackType} from "../../types";
 import FeedbackCard from './FeedbackCard';
 
 const Feedback: FC = () => {
-
+    const [countFeedback, setCountFeedback] = useState<number>(0)
     const [feedback, setFeedback] = useState<FeedbackType[]>(feedbackData.slice(0,2))
     const [click, setClick]  = useState<boolean>(false);
+
+    useEffect(()=>{
+        setFeedback(feedbackData.slice(countFeedback,countFeedback+2))
+    }, [countFeedback])
     return (
         <div className={styles.feedback}>
             <div className={styles.experience}>
@@ -28,7 +32,15 @@ const Feedback: FC = () => {
                         <FeedbackCard {...el} key={el.name}/>
                     ))}
                 </div>
-                <div className={styles.slider_control}></div>
+                <div className={styles.slider_control}>
+                    {[0, 2, 4, 6].map(el=>(
+                        <div
+                            key={el}
+                            className={cn(styles.line, {[styles.active_line]: el === countFeedback})}
+                            onClick={()=>setCountFeedback(el)}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

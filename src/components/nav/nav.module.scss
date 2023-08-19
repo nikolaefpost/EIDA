@@ -17,9 +17,11 @@
     @include display-flex(space-between);
     gap: 32px;
 
-    & span{
+    & a{
+      all: unset;
       @include fonts(500, 20px, 28px, $text-dark);
       letter-spacing: 0.25px;
+      cursor: pointer;
     }
   }
 

@@ -1,0 +1,134 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.questionsContacts {
+  padding: 68px 32px 80px;
+  @include display-flex(space-between, flex-start);
+  background: $bg-secondary;
+  gap: 140px;
+
+  & form {
+    margin-top: 12px;
+
+    & h2 {
+      @include fonts(700, 48px, 67px, $text-dark);
+    }
+
+    & h5 {
+      margin-top: 24px;
+      @include fonts(400, 16px, 22px, $text-body);
+    }
+
+    & .inputs {
+      margin-top: 32px;
+      @include display-flex;
+      gap: 24px;
+
+      & .input_block {
+        position: relative;
+        width: 50%;
+
+
+        & input {
+          all: unset;
+          box-sizing: border-box;
+          width: 443px;
+          height: 56px;
+          padding: 16px;
+          @include fonts(400, 14px, 20px, $text-body);
+          letter-spacing: 0.25px;
+          background:$bg-neutral;
+
+          &::placeholder {
+            @include fonts(400, 14px, 20px, $text-body);
+          }
+        }
+
+        .error_border{
+          border: 1px solid $error;
+        }
+
+        & .error{
+          font-family: "Gill Sans", sans-serif;
+          position: absolute;
+          top: -16px;
+          right: 0;
+          @include fonts(400, 10px, 10px,  $error)
+        }
+      }
+
+
+    }
+
+    & .textarea {
+      all: unset;
+      box-sizing: border-box;
+      background:$bg-neutral;
+      margin-top: 24px;
+      width: 100%;
+      height: 112px;
+      padding: 16px;
+      @include fonts(400, 14px, 20px, $text-body);
+
+      &::placeholder {
+        @include fonts(400, 14px, 20px, $text-body);
+      }
+    }
+
+    & button {
+      border: none;
+      margin-top: 32px;
+      @include fonts(700, 20px, 28px, $text-dark);
+      letter-spacing: 0.25px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      background: var(--gradient-primary, linear-gradient(135deg, #E7B000 0%, #F1C32D 100%));
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.16);
+
+      &:hover{
+        @include fonts(700, 20px, 28px, $text-white);
+        background: var(--gradient-secondary, linear-gradient(138deg, #000 0%, #1A1A1A 100%));
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32);
+      }
+    }
+
+    & .button_click{
+      background: $text-dark!important;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32)!important;
+    }
+  }
+
+  & .contacts{
+    @include display-flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 32px;
+
+    & h3{
+      @include fonts(700, 24px, 24px, $text-dark);
+      letter-spacing: 0.25px;
+    }
+
+    & .contacts_block{
+      @include display-flex(flex-start, flex-start);
+      flex-direction: column;
+      gap: 24px;
+
+      & .item{
+        @include display-flex(flex-start);
+        gap: 8px;
+
+        & div{
+          @include fonts(400, 16px, 22px, $text-body);
+        }
+
+      }
+    }
+
+    & .schedule{
+      width: 180px;
+      margin-left: 38px;
+      @include fonts(400, 16px, 22px, $text-body);
+      letter-spacing: 0.25px;
+    }
+  }
+}

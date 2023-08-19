@@ -1,0 +1,7 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+footer{
+  padding: 48px 32px;
+  background: $text-dark;
+}

@@ -9,7 +9,7 @@ import { play } from '../../assets/icons';
 
 const WithUs: FC = () => {
     return (
-        <div className={styles.content}>
+        <div className={styles.content} id="about">
             <img src={building} alt="building" className={styles.building}/>
             <div className={styles.about_us}>
                 <div className={styles.text}>

@@ -14,7 +14,7 @@ const Eco: FC = () => {
         setEcoCase(pre => caseData.find(el=> el.title === title) || pre)
     }
     return (
-        <div className={styles.eco}>
+        <div className={styles.eco} id="our_projects">
             <div className={styles.eco_title}>
                 <div className={styles.line}/>
                 {caseData.map(el=>(

@@ -1,9 +1,8 @@
 import React from 'react';
-import {Nav, TitleScreen, WithUs, Eco} from '../components';
+import {Nav, TitleScreen, WithUs, Eco, QuestionsContacts, Feedback, Footer} from '../components';
 
 
 import styles from "./main.module.scss"
-import Feedback from "../components/feedback";
 
 const Main = () => {
     return (
@@ -13,9 +12,8 @@ const Main = () => {
             <WithUs/>
             <Eco/>
             <Feedback/>
-            {/*<div className={styles.nav}>*/}
-            {/*    Temp*/}
-            {/*</div>*/}
+            <QuestionsContacts/>
+           <Footer/>
         </div>
     );
 };

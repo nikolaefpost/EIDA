@@ -23,6 +23,13 @@ export type FeedbackType = {
     content: string;
 }
 
+export interface INavData {
+    id: number;
+    title: string;
+    href: string;
+    isHover: boolean;
+}
+
 // type AddressType = {
 //     street: string;
 //     city: string;
