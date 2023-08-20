@@ -48,6 +48,7 @@
   }
 
   & .feedback_title{
+    padding: 0 32px;
     margin-top: 80px;
     @include fonts(700, 48px, 67px, $text-dark);
     letter-spacing: 0.25px;

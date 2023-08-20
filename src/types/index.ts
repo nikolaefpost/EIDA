@@ -6,6 +6,7 @@ export type CardType = {
     title: string;
     content: string;
     icon: string;
+    delay: number;
 }
 
 export type EcoType = {
