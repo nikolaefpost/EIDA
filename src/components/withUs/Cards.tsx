@@ -1,9 +1,11 @@
 import React from 'react';
 
-import styles from "../withUs/withUs.module.scss";
+
 import {CardType} from "../../types";
 import { car, puzl, partners } from '../../assets/icons';
 import Card from './Card';
+
+import styles from "../withUs/withUs.module.scss";
 
 const dataCards: CardType[]= [
     {

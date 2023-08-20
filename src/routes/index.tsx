@@ -1,4 +1,4 @@
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import React, {FC} from "react";
 import {RoutPaths} from "../helpers/constans";
 import { Main} from "../pages";

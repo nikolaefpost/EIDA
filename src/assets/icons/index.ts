@@ -6,3 +6,4 @@ export { default as play } from "./play.svg";
 export { default as mail } from "./mail.svg";
 export { default as phone } from "./phone.svg";
 export { default as point } from "./point.svg";
+export { default as logo } from "./LogoPilot.png";

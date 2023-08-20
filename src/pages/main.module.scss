@@ -2,15 +2,8 @@
 @import "src/styles/mixins";
 
 .main{
-  max-width: 1440px;
+  //max-width: 1440px;
   margin: 0 auto;
-  //@include display-flex;
-  //flex-direction: column;
   position: relative;
-
-  & .nav{
-    margin-top: 100px;
-    @include display-flex(space-between);
-    width: 600px;
-  }
+  overflow: hidden;
 }

@@ -69,7 +69,6 @@
         bottom: -16px;
         border-radius: 8px;
         //background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-
       }
 
     }
@@ -78,13 +77,110 @@
   & .cards{
     //margin-top: 80px;
     @include display-flex(space-between);
+    gap: 24px;
     padding: 80px 31px 0;
   }
+  @media screen and (max-width: 1000px) and (min-width: 501px){
+    height: auto;
 
+    & .building{
+      opacity: .5;
+    }
+
+    & .about_us{
+      padding: 40px 28px 0 22px;
+
+      & .text{
+        width: auto;
+        gap: 22px;
+
+        & h2{
+          @include fonts(700, 38px, 47px, $text-dark);
+        }
+
+        & p{
+          @include fonts(400, 16px, 22px, $text-dark);
+        }
+      }
+
+      & .image_block{
+        width: 356px;
+        height: 238px;
+
+        & .play{
+          left: 164px;
+          top: 107px;
+        }
+
+        & .pic{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    & .cards{
+      gap: 12px;
+      padding: 40px 16px 0;
+    }
+  }
+
+  @media screen and (max-width: 501px){
+    height: auto;
+
+    & .building{
+      position: absolute;
+      left: 0;
+      bottom: auto;
+      top: 20px;
+      opacity: .5;
+    }
+
+    & .about_us{
+      @include display-flex(space-between, flex-start);
+      flex-direction: column;
+      padding: 40px 16px 0;
+
+      & .text{
+        width: 100%;
+        gap: 24px;
+
+        & h2{
+          @include fonts(700, 42px, 52px, $text-dark);
+          text-align: center;
+        }
+      }
+
+      & .image_block{
+        margin-top: 24px;
+        padding-right: 14px;
+        width: 100%;
+        height: 200px;
+
+
+        & .play{
+          left: calc(50% - 14px);
+          top: 86px;
+        }
+
+        & .pic{
+          width: calc(100% - 14px);
+          height: 100%;
+        }
+      }
+    }
+
+    & .cards{
+      @include display-flex(flex-start);
+      flex-direction: column;
+      gap: 16px;
+      padding: 60px 16px 0;
+    }
+  }
 }
 
 .card{
-  width: 443px;
+  width: 33%;
   height: 242px;
   padding: 24px;
   border-radius: 8px;
@@ -118,5 +214,37 @@
 
   & p{
     @include fonts(400, 14px, 20px, $text-body);
+  }
+
+  @media screen and (max-width: 1000px) and (min-width: 501px){
+    height: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-y: auto;
+
+    & .title_block{
+      @include display-flex(flex-start);
+      flex-direction: column;
+      gap: 16px;
+
+      & .img{
+        width: 46px;
+        height: 46px;
+      }
+
+      & h3{
+        @include fonts(700, 20px, 20px, text-dark);
+      }
+    }
+
+    & p{
+      @include fonts(400, 14px, 20px, $text-body);
+    }
+  }
+
+  @media screen and (max-width: 501px){
+    width: 100%;
+    height: auto;
+    padding: 16px;
   }
 }

@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 import building from "../../assets/icons/building.svg"
-import styles from "../withUs/withUs.module.scss";
 import {about_us} from "../../assets";
 import Cards from "./Cards";
 import { play } from '../../assets/icons';
+
+import styles from "../withUs/withUs.module.scss";
 
 
 

@@ -1,13 +1,13 @@
 import React, {FC, useState} from 'react';
 import * as yup from "yup";
-import {useForm} from "react-hook-form";
+import {useForm, SubmitHandler} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
-
-import styles from "./questions&contacts.module.scss";
 import InputForm from "./InputForm";
 import {formPersonalInfo, phoneRegExp} from './form.data';
 import cn from "classnames";
 import {contacts, schedule} from "../../constants";
+
+import styles from "./questions&contacts.module.scss";
 
 
 const schema = yup
@@ -23,13 +23,19 @@ const schema = yup
             .string()
     })
 
+export interface IFormInput {
+    name: string;
+    telephone: string;
+    questions: string;
+}
+
 const QuestionsContacts: FC = () => {
     const [click, setClick] = useState<boolean>(false);
     const {
         register,
         formState: {errors},
         handleSubmit,
-    } = useForm({
+    } = useForm<IFormInput>({
         mode: "onTouched",
         resolver: yupResolver(schema),
         // values: currentUser,
@@ -37,12 +43,10 @@ const QuestionsContacts: FC = () => {
 
     });
 
-    const onSubmit = handleSubmit(data => {
-        console.log(data)
-    });
+    const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
     return (
-        <div className={styles.questionsContacts}>
-            <form onSubmit={onSubmit}>
+        <div className={styles.questionsContacts} id="contact_us">
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <h2>Залишились питання?</h2>
                 <h5>Заповніть форму і наші консультанти звяжуться з вами у найближчий час</h5>
                 <div className={styles.inputs}>
@@ -80,9 +84,9 @@ const QuestionsContacts: FC = () => {
                             <div>{item.content}</div>
                         </div>
                     ))}
-                    <h3>Розклад роботи</h3>
-                    <div className={styles.schedule}>{schedule}</div>
                 </div>
+                <h3>Розклад роботи</h3>
+                <div className={styles.schedule}>{schedule}</div>
             </div>
         </div>
     );

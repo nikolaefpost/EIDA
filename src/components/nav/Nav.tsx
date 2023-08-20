@@ -1,25 +1,13 @@
 import React, { FC } from 'react';
-import { menu } from '../../assets/icons';
-// import {CardType, CardVariant} from '../../types';
-import styles from "./nav.module.scss"
-import {navData} from "../../constants";
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import NavDesktop from "./desktop/NavDesktop";
+import NavMobile from "./mobil/NavMobile";
 
 
 
 const Nav: FC = () => {
-    return (
-        <div
-
-            className={styles.content}
-        >
-            <img src={menu} alt="menu"/>
-            <nav className={styles.text}>
-                {navData.map(item=>(
-                    <a key={item.href} href={item.href}>{item.title}</a>
-                ))}
-            </nav>
-        </div>
-    );
+    const matches = useMediaQuery('(min-width: 1000px)');
+    return matches? <NavDesktop/> : <NavMobile/>
 };
 
 export default Nav;

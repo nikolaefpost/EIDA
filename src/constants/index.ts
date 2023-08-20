@@ -35,4 +35,4 @@ export const contacts = [
     {icon: point, name: "point", content: "36231, Івано-Франківська область, місто Івано-Франківськ, вул. Прорізна, 81"},
 ]
 
-export const schedule = "Пн - Пт : 10:00 - 20:00\n" + "Сб - Нд : 10:00 - 18:00";
+export const schedule: string = "Пн - Пт : 10:00 - 20:00\n" + "Сб - Нд : 10:00 - 18:00";

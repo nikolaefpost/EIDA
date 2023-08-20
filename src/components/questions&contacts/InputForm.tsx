@@ -3,6 +3,13 @@ import cn from "classnames";
 
 import styles from "./questions&contacts.module.scss";
 
+// interface IInputForm{
+//     register: (name: string) => void,
+//     errors: Record<string, any>,
+//     field: string,
+//     name: string
+// }
+
 const InputForm: FC<any> = ({register, errors={}, field, name}) => {
     return (
         <div className={styles.input_block}  key={field}>
@@ -11,7 +18,7 @@ const InputForm: FC<any> = ({register, errors={}, field, name}) => {
                 className={cn({[styles.error_border]:errors[field]})}
                 type="text"
                 placeholder={name}
-                {...register(field)}
+                onChange={() => register(field)}
             />
         </div>
     );

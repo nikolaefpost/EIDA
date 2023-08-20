@@ -4,4 +4,33 @@
 footer{
   padding: 48px 32px;
   background: $text-dark;
+  @include display-flex(space-between);
+
+  & .text{
+    @include display-flex(space-between);
+    gap: 32px;
+
+    & a{
+      all: unset;
+      @include fonts(500, 20px, 28px, $text-white);
+      letter-spacing: 0.25px;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+    padding: 16px;
+    background: $bg-neutral;
+
+    & img{
+      height: 28px;
+    }
+    & .text {
+
+      & a {
+        @include fonts(500, 20px, 28px, $text-dark);
+      }
+    }
+  }
+
 }

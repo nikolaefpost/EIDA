@@ -2,13 +2,15 @@
 @import "src/styles/mixins";
 
 .content{
-  max-width: 1440px;
-  margin: 0 auto;
+  margin: -72px auto 0;
   height: 775px;
   background-image: url("../../assets/images/title_bg.png");
   padding: 168px 0;
   position: relative;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
 
   & .text_block{
     padding: 48px 56px 48px 80px;
@@ -36,9 +38,64 @@
       gap: 10px;
       border-radius: 8px;
       background: var(--gradient-primary, linear-gradient(135deg, #E7B000 0%, #F1C32D 100%));
-      box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.32);
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32);
       border: none;
       @include fonts(700, 20px, 28px, $text-dark);
+      cursor: pointer;
+
+      &:hover{
+        @include fonts(700, 20px, 28px, $text-white);
+        background: var(--gradient-secondary, linear-gradient(138deg, #000 0%, #1A1A1A 100%));
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32);
+      }
+    }
+
+    & .button_click{
+      background: $text-dark!important;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.32)!important;
+    }
+  }
+
+  @media screen and (max-width: 1000px) and (min-width: 501px){
+    margin: -49px auto 0;
+    height: auto;
+    padding: 128px 0 80px;
+
+    & .text_block{
+      padding: 48px 56px 48px 80px;
+      height: 415px;
+      gap: 22px;
+
+      & h1{
+        @include fonts(700, 62px, 67px, $text-white);
+      }
+
+      & h4{
+        @include fonts(400, 20px, 27px, $text-white);
+        letter-spacing: 0.25px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 501px){
+    margin: -49px auto 0;
+    height: calc(100vh + 49px);
+    padding: 200px 0;
+    background-position-x: 75%;
+
+    & .text_block{
+      padding: 0 16px;
+      height: auto;
+      width: 100%;
+      @include display-flex(space-around, flex-start);
+      flex-direction: column;
+      gap: 62px;
+      position: relative;
+
+
+      & h1{
+        @include fonts(700, 46px, 56px, $text-white);
+      }
     }
   }
 }

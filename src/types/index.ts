@@ -23,6 +23,11 @@ export type FeedbackType = {
     content: string;
 }
 
+export type formPersonalInfoType = {
+    field: string,
+    name: string
+}
+
 export interface INavData {
     id: number;
     title: string;
