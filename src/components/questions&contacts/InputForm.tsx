@@ -18,7 +18,7 @@ const InputForm: FC<any> = ({register, errors={}, field, name}) => {
                 className={cn({[styles.error_border]:errors[field]})}
                 type="text"
                 placeholder={name}
-                onChange={() => register(field)}
+                {...register(field)}
             />
         </div>
     );

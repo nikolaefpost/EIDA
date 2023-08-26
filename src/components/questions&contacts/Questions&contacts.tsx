@@ -26,7 +26,7 @@ const schema = yup
 export interface IFormInput {
     name: string;
     telephone: string;
-    questions: string;
+    questions?: string;
 }
 
 const QuestionsContacts: FC = () => {
